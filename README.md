@@ -29,7 +29,9 @@ CUDA_VISIBLE_DEVICES=0 python kitti_train.py --data_path ${kitti_data_path} --lo
 CUDA_VISIBLE_DEVICES=0 python evaluate_kitti_depth.py --scales 0 2 3 4 --data_path ${kitti_data_path} --load_weights_folder "${model_weight}" --eval_stereo
 ```
 The test results of our model (baidunetdisk https://pan.baidu.com/s/14ohVPXOnWKj7krq4N7ycsA, code: 5wh7) trained on kitti are as follows:
+
    abs_rel |   sq_rel |     rmse | rmse_log |       a1 |       a2 |       a3 | 
+
 &   0.099  &   0.775  &   4.570  &   0.186  &   0.893  &   0.961  &   0.981  \\
 
 #### prepare seasondepth dataset
@@ -47,5 +49,7 @@ CUDA_VISIBLE_DEVICES=6 python season_train.py --set_seed --split seasondepth --h
 CUDA_VISIBLE_DEVICES=0  python pred_season_depth.py --encoder "van" --size_encoder "small" --data_path ${test_data_path} --pred_depth_path ${pred_depth_path} --eval_split seasondepth --load_weights_folder "${model_weight}" --eval_stereo --num_workers 16 --batch_size 128 --eval_set test
 ```
 The test results of our model (baidunetdisk: https://pan.baidu.com/s/1cXoq1txyoIB6r-itXpFL5A code: 11uj) trained on kitti are as follows:
+
 Mean AbsRel ↓	Mean a1 ↑	Variance AbsRel (10e-2) ↓	Variance a1 (10e-2) ↓	Relative Range AbsRel ↓	Relative Range a1 ↓
+
 0.131	        0.852	      0.006	                  0.024	                      0.247	                  0.397
