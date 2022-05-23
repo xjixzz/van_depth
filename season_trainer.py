@@ -209,7 +209,6 @@ class Trainer:
             self.run_epoch()
             
             abs_rel = self.val_epoch() #validate
-            #self.save_model()
         
             if abs_rel <  best_abs_rel:
                 self.save_model()
