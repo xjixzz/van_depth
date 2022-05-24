@@ -26,6 +26,7 @@ CUDA_VISIBLE_DEVICES=0 python kitti_train.py --data_path ${kitti_data_path} --lo
 
 #### 5. test on the eigen split of kitti
 ```
+python export_kitti_gt_depth.py --data_path ${data_path} --split eigen #export gt depth
 CUDA_VISIBLE_DEVICES=0 python evaluate_kitti_depth.py --scales 0 2 3 4 --data_path ${kitti_data_path} --load_weights_folder "${model_weight}" --eval_stereo
 ```
 The test results of our [model](https://pan.baidu.com/s/14ohVPXOnWKj7krq4N7ycsA) (baidunetdisk extraction code: 5wh7) trained on kitti are as follows:
@@ -45,7 +46,7 @@ CUDA_VISIBLE_DEVICES=6 python season_train.py --set_seed --split seasondepth --h
 
 #### 8. generate depth predictions of seasondepth [test set](http://seasondepth-challenge.org/index/static/dataset/ICRA2022_SeasonDepth_Test_RGB.zip)
 ```
-CUDA_VISIBLE_DEVICES=0  python pred_season_depth.py --encoder "van" --size_encoder "small" --data_path ${test_data_path} --pred_depth_path ${pred_depth_path} --eval_split seasondepth --load_weights_folder "${model_weight}" --eval_stereo --num_workers 16 --batch_size 128 --eval_set test
+CUDA_VISIBLE_DEVICES=0  python pred_season_depth.py --encoder "van" --size_encoder "small" --data_path ${season_test_data_path} --pred_depth_path "${model_weight}/van_depth_test_predictions/slice2_3_7_8" --eval_split seasondepth --load_weights_folder "${model_weight}" --eval_stereo --num_workers 16 --batch_size 128 --eval_set test
 ```
 The test results of our [model](https://pan.baidu.com/s/1cXoq1txyoIB6r-itXpFL5A) (baidunetdisk extraction code: 11uj) trained on seasondepth are as follows:
 
