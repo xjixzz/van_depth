@@ -35,7 +35,8 @@ The test results of our [model](https://pan.baidu.com/s/14ohVPXOnWKj7krq4N7ycsA)
 | 0.099   | 0.775  | 4.570 | 0.186    | 0.893 | 0.961 | 0.981 |
 
 #### 6. prepare seasondepth dataset
-donload and unzip [train set](https://doi.org/10.6084/m9.figshare.16442025) ans [val set](https://doi.org/10.6084/m9.figshare.14731323)
+Donload and unzip [train set](https://doi.org/10.6084/m9.figshare.16442025) ans [val set](https://doi.org/10.6084/m9.figshare.14731323)
+
 Prepare [test set](http://seasondepth-challenge.org/index/static/dataset/ICRA2022_SeasonDepth_Test_RGB.zip) following [seasondepth](https://github.com/SeasonDepth/SeasonDepth/tree/master/dataset_info)
 
 #### 7. fine-tune on seasondepth
